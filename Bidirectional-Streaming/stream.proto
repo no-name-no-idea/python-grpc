@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "./";
+
+service StreamService {
+    rpc StreamFunc(stream StreamReq) returns (stream StreamRes);
+}
+
+message StreamRes{
+    repeated uint32 s = 1;
+}
+message StreamReq {
+    repeated uint32 q = 1; 
+}
